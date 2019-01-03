@@ -30,6 +30,14 @@
     return 5;
 }
 
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+    cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
+    cell.textLabel.text = @(indexPath.row).description;
+    return cell;
+}
+
 #pragma mark - getter and setter
 - (UITableView *)tableView {
     if (!_tableView) {
